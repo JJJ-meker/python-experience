@@ -8,7 +8,7 @@ root.geometry("800x800+50+0")
 root.resizable(False, False)
 canvas = tk.Canvas(root, width = 800, height = 800, bg = "white")
 
-class circle():
+class Circle():
     """
     定义圆类
     @param position 位置
@@ -35,19 +35,19 @@ def draw():
     canvas.create_line(525, 250, 700, 350, fill="black", width=5)
 
     #画圆
-    c0 = circle(50, 300, 150, 400, color="yellow")
+    c0 = Circle(50, 300, 150, 400, color="yellow")
     canvas.create_text(100, 350, text = 0, font = ("楷体", 20), fill = "black")
-    c1 = circle(200, 200, 300, 300, color = "yellow")
+    c1 = Circle(200, 200, 300, 300, color = "yellow")
     canvas.create_text(250, 250, text = 1, font = ("楷体", 20), fill = "black")
-    c2 = circle(200, 400, 300, 500, color = "yellow")
+    c2 = Circle(200, 400, 300, 500, color = "yellow")
     canvas.create_text(250, 450, text = 2, font = ("楷体", 20), fill = "black")
-    c3 = circle(350, 300, 450, 400, color = "yellow")
+    c3 = Circle(350, 300, 450, 400, color = "yellow")
     canvas.create_text(400, 350, text = 3, font = ("楷体", 20), fill = "black")
-    c4 = circle(500, 200, 600, 300, color = "yellow")
+    c4 = Circle(500, 200, 600, 300, color = "yellow")
     canvas.create_text(550, 250, text = 4, font = ("楷体", 20), fill = "black")
-    c5 = circle(500, 400, 600, 500, color = "yellow")
+    c5 = Circle(500, 400, 600, 500, color = "yellow")
     canvas.create_text(550, 450, text = 5, font = ("楷体", 20), fill = "black")
-    c6 = circle(650, 300, 750, 400, color = "yellow")
+    c6 = Circle(650, 300, 750, 400, color = "yellow")
     canvas.create_text(700, 350, text = 6, font = ("楷体", 20), fill = "black")
     global circles
     circles = {0:c0, 1:c1, 2:c2, 3:c3, 4:c4, 5:c5, 6:c6}
@@ -70,7 +70,7 @@ def BFS():
         """
         global index
         for i in range(len(drawList[index])):
-            circle(circles.get(drawList[index][i]).position, color="pink")
+            Circle(circles.get(drawList[index][i]).position, color="pink")
         index +=1
         if index > 3:
             tk.messagebox.showinfo("tip", "演示结束，谢谢观看！")
